@@ -1,0 +1,1455 @@
+basePath: /v1
+definitions:
+  models.AdminLoginRes:
+    properties:
+      access_token:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      password:
+        type: string
+      updated_at:
+        type: string
+      username:
+        type: string
+    type: object
+  models.AdminReq:
+    properties:
+      password:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.AdminRes:
+    properties:
+      access_token:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      password:
+        type: string
+      updated_at:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.AllAdmins:
+    properties:
+      admins:
+        items:
+          $ref: '#/definitions/models.GetAdminProdile'
+        type: array
+    type: object
+  models.AllNewProducts:
+    properties:
+      news_products:
+        items:
+          $ref: '#/definitions/models.NewProductsList'
+        type: array
+    type: object
+  models.AllProducts:
+    properties:
+      products:
+        items:
+          $ref: '#/definitions/models.ProductRes'
+        type: array
+    type: object
+  models.BrandCategories:
+    properties:
+      category_name:
+        type: string
+      id:
+        type: integer
+    type: object
+  models.BrandCategoryReq:
+    properties:
+      brand_id:
+        type: integer
+      category_id:
+        type: integer
+    type: object
+  models.BrandRequest:
+    properties:
+      brand_name:
+        type: string
+    type: object
+  models.BrandResponse:
+    properties:
+      brand_name:
+        type: string
+      id:
+        type: integer
+      logo:
+        type: string
+    type: object
+  models.BrandUpdateReq:
+    properties:
+      brand_name:
+        type: string
+      id:
+        type: integer
+    type: object
+  models.CategoryReq:
+    properties:
+      category_name:
+        type: string
+    type: object
+  models.CategoryUpdateReq:
+    properties:
+      category_name:
+        type: string
+      id:
+        type: integer
+    type: object
+  models.FailureInfo:
+    properties:
+      code:
+        type: integer
+      error: {}
+      message:
+        type: string
+    type: object
+  models.FileResponse:
+    properties:
+      media_type:
+        type: string
+      url:
+        type: string
+    type: object
+  models.GetAdminProdile:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      password:
+        type: string
+      updated_at:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.GetBrandInfo:
+    properties:
+      brand_name:
+        type: string
+      categories:
+        items:
+          $ref: '#/definitions/models.BrandCategories'
+        type: array
+      id:
+        type: integer
+    type: object
+  models.MediaLink:
+    properties:
+      mediaLink:
+        type: string
+    type: object
+  models.NewProductReq:
+    properties:
+      brand_id:
+        type: integer
+      camera:
+        type: string
+      characteristics:
+        additionalProperties:
+          type: string
+        example:
+          key: value
+        type: object
+      description:
+        type: string
+      dioganal:
+        type: number
+      display_type:
+        type: string
+      media links:
+        items:
+          $ref: '#/definitions/models.MediaLink'
+        type: array
+      new_price:
+        type: number
+      old_price:
+        type: number
+      os_type:
+        type: string
+      title:
+        type: string
+    type: object
+  models.NewProductRes:
+    properties:
+      brand_id:
+        type: integer
+      camera:
+        type: string
+      characteristics:
+        additionalProperties:
+          type: string
+        example:
+          key: value
+        type: object
+      created_at:
+        type: string
+      description:
+        type: string
+      dioganal:
+        type: number
+      display_type:
+        type: string
+      id:
+        type: integer
+      media links:
+        items:
+          $ref: '#/definitions/models.MediaLink'
+        type: array
+      new_price:
+        type: number
+      old_price:
+        type: number
+      os_type:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.NewProductsList:
+    properties:
+      brand_id:
+        type: integer
+      id:
+        type: integer
+      new_price:
+        type: number
+      old_price:
+        type: number
+      title:
+        type: string
+    type: object
+  models.ProductReq:
+    properties:
+      brand_id:
+        type: integer
+      camera:
+        type: string
+      category_id:
+        type: integer
+      characteristics:
+        additionalProperties:
+          type: string
+        example:
+          key: value
+        type: object
+      description:
+        type: string
+      dioganal:
+        type: number
+      display_type:
+        type: string
+      media_link:
+        items:
+          $ref: '#/definitions/models.MediaLink'
+        type: array
+      os_type:
+        type: string
+      price:
+        type: number
+      title:
+        type: string
+    type: object
+  models.ProductRes:
+    properties:
+      brand_id:
+        type: integer
+      camera:
+        type: string
+      category_id:
+        type: integer
+      characteristics:
+        additionalProperties:
+          type: string
+        example:
+          key: value
+        type: object
+      created_at:
+        type: string
+      description:
+        type: string
+      dioganal:
+        type: number
+      display_type:
+        type: string
+      id:
+        type: integer
+      media_link:
+        items:
+          $ref: '#/definitions/models.MediaLink'
+        type: array
+      os_type:
+        type: string
+      price:
+        type: number
+      title:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.SuccessInfo:
+    properties:
+      message:
+        type: string
+      status_code:
+        type: integer
+    type: object
+  models.UpdateMediaLink:
+    properties:
+      id:
+        type: integer
+      media_link:
+        type: string
+    type: object
+  models.UpdateNewProductReq:
+    properties:
+      brand_id:
+        type: integer
+      camera:
+        type: string
+      characteristics:
+        additionalProperties:
+          type: string
+        example:
+          key: value
+        type: object
+      description:
+        type: string
+      dioganal:
+        type: number
+      display_type:
+        type: string
+      id:
+        type: integer
+      media_link:
+        items:
+          $ref: '#/definitions/models.UpdateMediaLink'
+        type: array
+      new_price:
+        type: number
+      old_price:
+        type: number
+      os_type:
+        type: string
+      title:
+        type: string
+    type: object
+  models.UpdateProductReq:
+    properties:
+      camera:
+        type: string
+      characteristics:
+        additionalProperties:
+          type: string
+        example:
+          key: value
+        type: object
+      description:
+        type: string
+      dioganal:
+        type: number
+      display_type:
+        type: string
+      id:
+        type: integer
+      media_link:
+        items:
+          $ref: '#/definitions/models.UpdateMediaLink'
+        type: array
+      os_type:
+        type: string
+      price:
+        type: number
+      title:
+        type: string
+    type: object
+  models.UpdateUserReq:
+    properties:
+      id:
+        type: integer
+      phone_number:
+        type: string
+    type: object
+  models.UserReq:
+    properties:
+      phone_number:
+        example: "998"
+        type: string
+    type: object
+  models.UserRes:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      phone_number:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  repo.CategoryResponse:
+    properties:
+      catergoryName:
+        type: string
+      createdAt:
+        type: string
+      id:
+        type: integer
+      products:
+        items:
+          $ref: '#/definitions/repo.ProductForList'
+        type: array
+      updatedAt:
+        type: string
+    type: object
+  repo.Empty:
+    type: object
+  repo.MediaRes:
+    properties:
+      id:
+        type: integer
+      mediaLink:
+        type: string
+      productId:
+        type: integer
+    type: object
+  repo.ProductForList:
+    properties:
+      brandId:
+        type: integer
+      categoryId:
+        type: integer
+      id:
+        type: integer
+      mediaLinks:
+        items:
+          $ref: '#/definitions/repo.MediaRes'
+        type: array
+      price:
+        type: number
+      title:
+        type: string
+    type: object
+  repo.ProductResponse:
+    properties:
+      brandId:
+        type: integer
+      camera:
+        type: string
+      categoryId:
+        type: integer
+      characteristics:
+        type: string
+      createdAt:
+        type: string
+      description:
+        type: string
+      dioganal:
+        type: number
+      displayType:
+        type: string
+      id:
+        type: integer
+      mediaLinks:
+        items:
+          $ref: '#/definitions/repo.MediaRes'
+        type: array
+      osType:
+        type: string
+      price:
+        type: number
+      rating:
+        type: number
+      title:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+host: 100.26.188.92:7070
+info:
+  contact:
+    email: gofurovmurtazoxon@gmail.com
+    name: Murtazoxon
+    url: https://t.me/murtazokhon_gofurov
+  description: This is climate_uz server api server
+  termsOfService: 2 term climate_uz
+  title: Climate_uz api
+  version: "1.0"
+paths:
+  /admin:
+    patch:
+      consumes:
+      - application/json
+      description: Through this api admin can update info
+      parameters:
+      - description: Admin Update
+        in: body
+        name: admin
+        required: true
+        schema:
+          $ref: '#/definitions/models.AdminReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetAdminProdile'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Update admin info
+      tags:
+      - Admin
+    post:
+      consumes:
+      - application/json
+      description: Through this api new admin can register
+      parameters:
+      - description: AddAdmin
+        in: body
+        name: admin
+        required: true
+        schema:
+          $ref: '#/definitions/models.AdminReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.AdminRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Add admin
+      tags:
+      - Admin
+  /admin/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Through this api admin can delete info
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessInfo'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Delete admin info
+      tags:
+      - Admin
+  /admin/{username}/{password}:
+    get:
+      consumes:
+      - application/json
+      description: Through this api admin can login
+      parameters:
+      - description: username
+        in: path
+        name: username
+        required: true
+        type: string
+      - description: password
+        in: path
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AdminLoginRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: Login admin
+      tags:
+      - Admin
+  /admin/profile:
+    get:
+      consumes:
+      - application/json
+      description: Through this api admin can get profile
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetAdminProdile'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Get admin profile
+      tags:
+      - Admin
+  /admins:
+    get:
+      consumes:
+      - application/json
+      description: Through this api admin can get all admins
+      parameters:
+      - description: search
+        in: path
+        name: keyword
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllAdmins'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Get all admin
+      tags:
+      - Admin
+  /brand:
+    patch:
+      consumes:
+      - application/json
+      description: Through this api can update brand info
+      parameters:
+      - description: Brand Update
+        in: body
+        name: brand
+        required: true
+        schema:
+          $ref: '#/definitions/models.BrandUpdateReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BrandResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Update brand info
+      tags:
+      - Brand
+    post:
+      consumes:
+      - application/json
+      description: This method add new brand
+      parameters:
+      - description: AddNewBrand
+        in: body
+        name: brand
+        required: true
+        schema:
+          $ref: '#/definitions/models.BrandRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.BrandResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Add new brand
+      tags:
+      - Brand
+  /brand-category:
+    post:
+      consumes:
+      - application/json
+      description: Through this api can add brand_category
+      parameters:
+      - description: BrandCategory
+        in: body
+        name: brand_category
+        required: true
+        schema:
+          $ref: '#/definitions/models.BrandCategoryReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.SuccessInfo'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Add brand_category
+      tags:
+      - Brand
+  /brand/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Through this api can get brand info
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetBrandInfo'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: Get brand info
+      tags:
+      - Brand
+  /categories:
+    get:
+      consumes:
+      - application/json
+      description: this method renames the category with id
+      parameters:
+      - description: page
+        in: query
+        name: page
+        type: string
+      - description: limit
+        in: query
+        name: limit
+        type: string
+      - description: search
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repo.CategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: Update  category
+      tags:
+      - Category
+  /category:
+    patch:
+      consumes:
+      - application/json
+      description: this method renames the category with id
+      parameters:
+      - description: UpdateCategoryReq
+        in: body
+        name: category
+        required: true
+        schema:
+          $ref: '#/definitions/models.CategoryUpdateReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repo.CategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Update  category
+      tags:
+      - Category
+    post:
+      consumes:
+      - application/json
+      description: this method create new category
+      parameters:
+      - description: CategoryRequest
+        in: body
+        name: category
+        required: true
+        schema:
+          $ref: '#/definitions/models.CategoryReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repo.CategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Create new categorys
+      tags:
+      - Category
+  /category/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This function is for deleting categories by Id
+      parameters:
+      - description: categoryId
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repo.Empty'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Delete  category
+      tags:
+      - Category
+    get:
+      consumes:
+      - application/json
+      description: this method get category by id
+      parameters:
+      - description: category id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repo.CategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: Get  category
+      tags:
+      - Category
+  /image-upload:
+    post:
+      consumes:
+      - application/json
+      description: Through this api can upload media file
+      parameters:
+      - description: image-upload
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.FileResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: upload media file
+      tags:
+      - Media
+  /new-product:
+    patch:
+      consumes:
+      - application/json
+      description: "this \tmethod update news product"
+      parameters:
+      - description: UpdateRequest
+        in: body
+        name: news
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateNewProductReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.NewProductRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: "update \tnews product"
+      tags:
+      - News
+    post:
+      consumes:
+      - application/json
+      description: This method add news products
+      parameters:
+      - description: NewsProductRequest
+        in: body
+        name: news
+        required: true
+        schema:
+          $ref: '#/definitions/models.NewProductReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.NewProductRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Add news product
+      tags:
+      - News
+  /new-product/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: "this \tmethod delete news product by id"
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessInfo'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: delete news product info
+      tags:
+      - News
+    get:
+      consumes:
+      - application/json
+      description: This method get news product info by id
+      parameters:
+      - description: newproductID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.NewProductRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: get news products
+      tags:
+      - News
+  /new-products:
+    get:
+      consumes:
+      - application/json
+      description: Through this api can get all new products
+      parameters:
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: limit
+        in: query
+        name: limit
+        type: integer
+      - description: search
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllNewProducts'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: get all news products
+      tags:
+      - News
+  /product:
+    post:
+      consumes:
+      - application/json
+      description: Through this api can create product
+      parameters:
+      - description: ProductRequest
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/models.ProductReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/repo.ProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: create new product
+      tags:
+      - Product
+    put:
+      consumes:
+      - application/json
+      description: this method edit product info
+      parameters:
+      - description: UpdateProductRequest
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateProductReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repo.ProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: edit product info
+      tags:
+      - Product
+  /product/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: this method delete product info by productId
+      parameters:
+      - description: product_id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessInfo'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: delete product info
+      tags:
+      - Product
+    get:
+      consumes:
+      - application/json
+      description: this method get product by Id
+      parameters:
+      - description: product_id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/repo.ProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: get one product
+      tags:
+      - Product
+  /products:
+    get:
+      consumes:
+      - application/json
+      description: this method get all products list
+      parameters:
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: limit
+        in: query
+        name: limit
+        type: integer
+      - description: search
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllProducts'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: get all products
+      tags:
+      - Product
+  /user:
+    patch:
+      consumes:
+      - application/json
+      description: This method update user info
+      parameters:
+      - description: UpdateUserReq
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateUserReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserRes'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Update user info
+      tags:
+      - User
+    post:
+      consumes:
+      - application/json
+      description: This function create new user
+      parameters:
+      - description: UserRequest
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserReq'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.UserRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: add user phone_number
+      tags:
+      - User
+  /user/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: This method delete user info
+      parameters:
+      - description: user_id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SuccessInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Delete user info
+      tags:
+      - User
+    get:
+      consumes:
+      - application/json
+      description: This function get user by id
+      parameters:
+      - description: user_id
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      security:
+      - BearerAuth: []
+      summary: Get user
+      tags:
+      - User
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: This method is to get all users
+      parameters:
+      - description: page
+        in: query
+        name: page
+        required: true
+        type: string
+      - description: limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - description: search
+        in: query
+        name: search
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserRes'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.FailureInfo'
+      summary: Get all users
+      tags:
+      - User
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

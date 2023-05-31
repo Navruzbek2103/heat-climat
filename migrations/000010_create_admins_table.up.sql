@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS admins(
+    ID UUID NOT NULL PRIMARY KEY,
+    user_name VARCHAR(60) NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    refresh_token TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    deleted_at TIMESTAMP WITH TIME ZONE
+);

@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: db
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=developer
+      - POSTGRES_PASSWORD=2002
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
+
+  climate:
+    container_name: climate
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: climate
+    ports:
+      - 7070:7070
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=developer
+      - DB_PASSWORD=2002
+      - DB_NAME=climatedb
+      - HTTP_PORT=:7070
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  db:
+    driver: local
